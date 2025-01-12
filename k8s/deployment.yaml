@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loginnextjs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: loginnextjs
+  template:
+    metadata:
+      labels:
+        app: loginnextjs
+    spec:
+      containers:
+      - name: loginnextjs
+        image: your-registry/loginnextjs:latest
+        ports:
+        - containerPort: 3000
